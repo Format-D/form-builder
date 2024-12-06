@@ -38,6 +38,7 @@ class FormElementWrappingImplementation extends AbstractFusionObject
         }
         $formRuntime = $context['formRuntime'];
         $formRuntime->registerRenderCallback(function (string $output, RootRenderableInterface $renderable) {
+			$furtherPagesNode = null;
             $renderingOptions = $renderable->getRenderingOptions();
             if (!isset($renderingOptions['_node']) || !isset($renderingOptions['_fusionPath'])) {
                 // TODO error/log?
